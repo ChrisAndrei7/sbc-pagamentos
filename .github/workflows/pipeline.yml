@@ -18,7 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r appVeiculos/project/requirements.txt
+        pip install -r appVendas/project/requirements.txt
 
           
 
@@ -36,7 +36,7 @@ jobs:
             distribution: 'adopt'
             package: '*.jar'
         - name: Publish package
-          run: pip install -r appVeiculos/project/requirements.txt
+          run: pip install -r appVendas/project/requirements.txt
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}		  
 
@@ -52,6 +52,6 @@ jobs:
           pip install behave
     - name: Teste
       run:
-          #COMANDO OK > behave appVeiculos/project/features/veiculos.feature
+          #COMANDO OK > behave appVendas/project/features/vendas.feature
           python -m pip install --upgrade pip
-          pip debug -r appVeiculos/project/requirements.txt
+          pip debug -r appVendas/project/requirements.txt
