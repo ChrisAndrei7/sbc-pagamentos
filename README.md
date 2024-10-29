@@ -1,7 +1,7 @@
 <h1 align="center"> SubCars - Sistema para revenda de carros </h1>
 Bem-vindo ao Sistema para revenda de carros da SubCars! Este projeto está em desenvolvimento como atividade para a FIAP, curso Software Architecture.	
 <br/>
-<b>Neste repositório, temos o microsserviço de cadastro dos pagamentos</b>
+<b>Neste repositório, temos o microsserviço de cadastro das pagamentos</b>
 
 # :computer: Endpoint base da aplicação
 http://localhost:8005/
