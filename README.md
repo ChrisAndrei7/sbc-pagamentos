@@ -43,4 +43,4 @@ OBS: BDD está dentro do arquivo "pagamentos.feature"
 
 # Evidência dos testes:
 
-#![sbc-vendas_test](link xx)
+![sbc-pagamentos_test](https://github.com/user-attachments/assets/44d14602-ca61-471c-8a21-4a052a7643a4)
