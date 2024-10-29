@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "a3dbcc16-2044-4cc6-86a9-a89d279f3ed9",
-		"name": "sbc-vendas",
+		"_postman_id": "e7220839-cdd5-4b7e-877d-765d76a30c60",
+		"name": "sbc-pagamentos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33097875",
-		"_collection_link": "https://winter-desert-869279.postman.co/workspace/bf09e259-9dfb-40ec-823b-a85d2a12f07a/collection/33097875-a3dbcc16-2044-4cc6-86a9-a89d279f3ed9?action=share&source=collection_link&creator=33097875"
+		"_collection_link": "https://winter-desert-869279.postman.co/workspace/bf09e259-9dfb-40ec-823b-a85d2a12f07a/collection/33097875-e7220839-cdd5-4b7e-877d-765d76a30c60?action=share&source=collection_link&creator=33097875"
 	},
 	"item": [
 		{
-			"name": "Consultar vendas",
+			"name": "Consultar pagamentos",
 			"event": [
 				{
 					"listen": "test",
@@ -25,27 +25,27 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8002/vendas",
+					"raw": "localhost:8005/pagamentos",
 					"host": [
 						"localhost"
 					],
-					"port": "8002",
+					"port": "8005",
 					"path": [
-						"vendas"
+						"pagamentos"
 					]
 				},
-				"description": "API para consultar vendas cadastradas, não é necessário informar nada no body."
+				"description": "API para consultar pagamentos cadastrados, não é necessário informar nada no body."
 			},
 			"response": []
 		},
 		{
-			"name": "Criar vendas",
+			"name": "Criar pagamentos",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cpf\": \"12345678910\",\r\n    \"placa\": \"KLM-4D56\",\r\n    \"NomeCliente\": \"Antonio Gabriel\",\r\n    \"Veiculo\": \"Onix\",\r\n    \"dataVenda\": \"13-11-2024\",\r\n    \"status\": \"Aguardando Pagamento\"\r\n}",
+					"raw": "{\r\n    \"cpf\": \"12345678910\",\r\n    \"placa\": \"KLM-4D56\",\r\n    \"statusPagamento\": \"Aguardando Pagamento\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,28 +53,28 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8002/vendas/create",
+					"raw": "localhost:8005/pagamentos/create",
 					"host": [
 						"localhost"
 					],
-					"port": "8002",
+					"port": "8005",
 					"path": [
-						"vendas",
+						"pagamentos",
 						"create"
 					]
 				},
-				"description": "API para cadastrar novas vendas, necessário informar os 6 dados abaixo:\n\n- cpf\n    \n- placa\n    \n- NomeCliente\n    \n- Veiculo\n    \n- dataVenda\n    \n- status"
+				"description": "API para cadastrar novos pagamentos, necessário informar os 3 dados abaixo:\n\n- cpf\n    \n- placa\n    \n- statusPagamento"
 			},
 			"response": []
 		},
 		{
-			"name": "Atualizar venda",
+			"name": "Atualizar pagamento",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cpf\": \"12345678910\",\r\n    \"placa\": \"KLM-4D56\",\r\n    \"NomeCliente\": \"Antonio Gabriel\",\r\n    \"Veiculo\": \"Onix\",\r\n    \"dataVenda\": \"13-11-2024\",\r\n    \"status\": \"Cancelada\"\r\n}",
+					"raw": "{\r\n    \"cpf\": \"12345678910\",\r\n    \"placa\": \"KLM-4D56\",\r\n    \"statusPagamento\": \"Pagamento Aprovado!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,23 +82,23 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8002/vendas/update/1",
+					"raw": "localhost:8005/pagamentos/update/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8002",
+					"port": "8005",
 					"path": [
-						"vendas",
+						"pagamentos",
 						"update",
 						"1"
 					]
 				},
-				"description": "API para atualizar vendas cadastradas, necessário informar os 6 dados abaixo e o ID da venda no final do endpoint:\n\n- cpf\n    \n- placa\n    \n- NomeCliente\n    \n- Veiculo\n    \n- dataVenda\n    \n- status"
+				"description": "API para atualizar pagamentos cadastrados, necessário informar os 3 dados abaixo e o ID do pagamento no final do endpoint:\n\n- cpf\n    \n- placa\n    \n- statusPagamento"
 			},
 			"response": []
 		},
 		{
-			"name": "Consultar venda pelo ID",
+			"name": "Consultar pagamento pelo ID",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -115,23 +115,23 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8002/vendas/read/1",
+					"raw": "localhost:8005/pagamentos/read/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8002",
+					"port": "8005",
 					"path": [
-						"vendas",
+						"pagamentos",
 						"read",
 						"1"
 					]
 				},
-				"description": "API para consultar vendas cadastradas, filtrando pelo id. Necessário informar o id no final do endpoint."
+				"description": "API para consultar pagamentos cadastrados, filtrando pelo id. Necessário informar o id no final do endpoint."
 			},
 			"response": []
 		},
 		{
-			"name": "Consultar venda pela placa",
+			"name": "Consultar pagamento pela placa",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -148,23 +148,23 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8002/vendas/readplaca/KLM-4D56",
+					"raw": "localhost:8005/pagamentos/readplaca/KLM-4D56",
 					"host": [
 						"localhost"
 					],
-					"port": "8002",
+					"port": "8005",
 					"path": [
-						"vendas",
+						"pagamentos",
 						"readplaca",
 						"KLM-4D56"
 					]
 				},
-				"description": "API para consultar vendas cadastradas, filtrando pela placa. Necessário informar a placa no final do endpoint."
+				"description": "API para consultar pagamentos cadastrados, filtrando pela placa. Necessário informar a placa no final do endpoint."
 			},
 			"response": []
 		},
 		{
-			"name": "Consultar venda pelo CPF",
+			"name": "Consultar pagamento pelo CPF",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -181,23 +181,23 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8002/vendas/readCPF/12345678910",
+					"raw": "localhost:8005/pagamentos/readCPF/12345678910",
 					"host": [
 						"localhost"
 					],
-					"port": "8002",
+					"port": "8005",
 					"path": [
-						"vendas",
+						"pagamentos",
 						"readCPF",
 						"12345678910"
 					]
 				},
-				"description": "API para consultar vendas cadastradas, filtrando pelo CPF. Necessário informar o CPF no final do endpoint."
+				"description": "API para consultar pagamentos cadastrados, filtrando pelo CPF. Necessário informar o CPF no final do endpoint."
 			},
 			"response": []
 		},
 		{
-			"name": "Deletar venda",
+			"name": "Deletar pagamento",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -211,18 +211,18 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8002/vendas/delete/1",
+					"raw": "localhost:8005/pagamentos/delete/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8002",
+					"port": "8005",
 					"path": [
-						"vendas",
+						"pagamentos",
 						"delete",
 						"1"
 					]
 				},
-				"description": "API para deletar um venda cadastrada, necessário informar o id do venda no endpoint."
+				"description": "API para deletar um pagamento cadastrado, necessário informar o id do venda no endpoint."
 			},
 			"response": []
 		}
